@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../../common/common.css">
+    <style>
+        .wzul{
+            margin-top: 50px;
+            /* animation:hl 1s ; */
+        }
+        /* .wzul:hover{
+            animation:suojin .5s linear;
+            padding-left:30px;
+        } */
+        @keyframes suojin{
+            0%{
+                padding-left: 0;
+            }
+            100%{
+                padding-left: 30px;
+            }
+        }
+        @keyframes hl{
+            0%{
+                padding-left: 30px;
+            }
+            100%{
+                padding-left: 0px;
+            }
+        }
+        .wzul>li{
+            position: relative;
+            padding-top: 20px;
+            margin-bottom: 50px;
+        }
+        .wzul>li div:nth-child(1){
+            margin: 10px 0;
+        }
+        .wzul>li>div:nth-child(1)>h1 {
+            font-size: 18px;
+        }
+        .wzul>li>div:nth-child(1)>div {
+            font-size: 12px;
+            position: absolute;
+            right: 20px;
+            top: 30px;
+            color: black;
+        }
+        .wzul>li>div:nth-child(1)>div span{
+            color: #999;
+        }
+        .wzul>li>div:nth-child(2){
+            line-height: 25px;
+            color: #999;
+        }
+        .wzul>li>div:last-child  button{
+            width: 80px;
+            line-height: 30px;
+            border: 1px solid #ddd;
+            background: none;
+            font-size: 12px;
+            float: right;
+            cursor: pointer;
+        }
+        .wzul>li div:last-child div {
+            border-bottom: 1px solid #ddd;
+            position: absolute;
+            left: 0;
+            height: 1px;
+            width: 100%;
+            bottom: -50px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <ul class="wzul">
+            <li>
+                <div>
+                    <h1> <a href="#">  <b> 金海威2021年度先进表彰 </b>   </a>   </h1>
+                    <div>
+                        <span>发布时间:</span>  2022-03-01 15:37
+                    </div>
+                </div>
+
+                <div>摘要：他们，是金海威2021年度先进员工代表，
+                        在他们背后有更多辛勤付出的金海威人。
+                        感谢员工们的热情工作与辛苦付出，
+                        感谢那些曾经为金海威打下基础的前辈们，
+                        同时我们欢迎有志之士的加入，
+                        让我们携手创造更美好的明天！
+                </div>
+
+                <div>
+                    <a href="#">  <button>查看详情</button>   </a> 
+                    <div></div>
+                </div>
+                
+            </li>
+
+            <li>
+                <div>
+                    <h1> <a href="#">  <b> 金海威2021年度先进表彰 </b>   </a>   </h1>
+                    <div>
+                        <span>发布时间 :</span>  2022-03-01 15:37
+                    </div>
+                </div>
+
+                <div>摘要：他们，是金海威2021年度先进员工代表，
+                        在他们背后有更多辛勤付出的金海威人。
+                        感谢员工们的热情工作与辛苦付出，
+                        感谢那些曾经为金海威打下基础的前辈们，
+                        同时我们欢迎有志之士的加入，
+                        让我们携手创造更美好的明天！
+                </div>
+
+                <div>
+                    <a href="#">  <button>查看详情</button>   </a> 
+                    <div></div>
+                </div>
+                
+            </li>
+
+        </ul>
+    </div>
+
+    <script src="./common.js"></script>
+
+</body>
+</html>

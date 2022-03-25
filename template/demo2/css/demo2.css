@@ -1,0 +1,144 @@
+.banner {
+  width: 100%;
+  height: 320px;
+  min-width: 1200px;
+}
+.banner>img{
+  width: 100%;
+  height: 320px;
+}
+.body-top{
+  width: 100%;
+  height: 50px;
+  background: rgb(243, 240, 240);
+  min-width: 1200px;
+}
+.body-top .tabulate {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+}
+.tabulate>li {
+  flex: 1;
+  text-align: center;
+  line-height: 50px;
+  cursor: pointer;
+}
+.tabulate>li:hover{
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+  .xs{
+    display: block;
+  }
+  .yc{
+    display:none
+  }
+/* 上面是nav栏和背景图通用样式 */
+
+  /*主体  */
+  .box>div ul{
+    margin-top: 40px;
+    /* display: flex;
+    flex-wrap:wrap; */
+  }
+  .box>div>ul>li{
+    /* flex: 30%; */
+    width: 30%;
+    float: left;
+    border: 1px solid #ddd;
+    height: 300px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+  }
+  .box>div>ul>li>div{
+    width: 100%;
+    height: 134%;
+    background: #5575ddd3;
+    position: absolute;
+    top: 0; 
+    opacity: 0;
+  }
+
+  /* 设置动画 */
+  .box>div>ul>li>div:hover {
+    opacity: 1;
+    cursor: pointer;
+    animation:mymove .5s ;
+    top: -100px;
+  }
+@keyframes mymove{
+    0% {  top: 0;       opacity: 0; }
+  100% {  top: -100px;  opacity: 1; }
+}
+ 
+
+  .box>div>ul>li:nth-child(3n-1){ 
+    margin: 0 40px;
+  }
+  .box>div>ul>li img{
+    width: 100%;
+    height: 100%;
+  }
+  
+  .box-ul-yc{
+    position: absolute;
+    bottom: 40px;
+    text-align: center;
+    color: #fff;
+  }
+  .box-ul-yc span{
+    display: inline-block;
+    width: 200px;
+    border-radius:40px ;
+    background: #fff;
+    color: #5575dd;
+    margin: 0 20%;
+    font-size: 16px;
+    line-height: 40px;
+  }
+  .box-ul-yc h2{
+    line-height: 50px;
+    font-size: 25px;
+  }
+
+  .kb{
+    height: 70px;
+  }
+  .dibubox{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 300px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 12px;
+    color: #fff;
+    display: flex;
+}
+.dibubox>div{
+  flex: 1;
+  background: blue;
+  padding: 0px 15px;
+  cursor: pointer;
+}
+.dibubox>ul{
+  flex: 4;
+  display: flex;
+}
+.dibubox>ul>li{
+  color: black;
+  flex: 1;
+  margin: 0 10px 0 0;
+  background: #ddd;
+}
+.dibubox>ul>li:first-child{
+  margin-left: 10px;
+}
+.dibubox>ul>li:hover{
+    background:#2c3d83;
+    color: #fff;
+    cursor: pointer;
+}

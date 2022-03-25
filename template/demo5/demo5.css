@@ -1,0 +1,41 @@
+.body-top{
+    width: 100%;
+    height: 50px;
+    background: rgb(243, 240, 240);
+    min-width: 1200px;
+  }
+  .body-top .tabulate {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .tabulate>li {
+    width: 200px;
+    float: left;
+    text-align: center;
+    line-height: 50px;
+    cursor: pointer;
+  }
+  .tabulate>li:hover{
+    width: 200px;
+    height: 100%;
+    background: #fff;
+  }
+    .xs{
+      display: block;
+    }
+    .yc{
+      display:none
+    }
+
+
+    .box h1{
+        text-align: center;
+        padding-bottom: 20px;
+        margin: 40px 0;
+        font-size: 30px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .box div{
+        min-height: 400px;
+    }

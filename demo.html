@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 轮播图样式 */
+        .swiper {
+              width: 100%;
+              height: 100%;
+              min-width: 1200px;
+            } 
+            .swiper img{
+                width: 100%;
+                height: 100%;
+            }
+        
+        /* 产品展示样式 */
+        .center .title{
+            margin-top: 30px;
+            line-height: 50px;
+            color: #999;
+        }
+        .center .title b{
+            font-size: 25px;
+            color: black;
+        }
+        /* 上面两个复用标题 */
+
+        .center .title b::after{
+            content: "";
+            display: inline-block;
+            border-right:1px solid #999 ;
+            width: 2px;
+            height: 15px;
+            margin:  0px 10px ;
+        }
+        .box-body img{
+            width: 100%;
+        }
+        .box-body{
+            display: flex;
+        }
+        .box-body>div{
+            flex: 1;
+            border: 1px solid #ccc;
+            margin-left:20px ;
+            position: relative;
+            background: #f2f2f2;
+        }
+        .box-body>div:first-child{
+            margin:0;
+        }
+        .box-body .yin{
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: rgba(13, 61, 190, 0.8);
+            position: absolute;
+            top: 0;
+        }
+        .box-body .yin div{
+            border-radius: 50%;
+            border: 1px solid #fff;
+            background: rgb(13, 61, 190);
+            width: 50px;
+            height: 50px;
+            margin:  0 auto;
+            margin-top: 20%;
+            padding: 2px;
+        }
+        .box-body .yin div img{
+            width: 90%;
+            height: 100%;
+            margin: 2px 0 0 2px;
+        }
+        .box-body .yin h1{
+            color: #fff;
+            font-size: 20px;
+            padding-top: 10px;
+            text-align: center;
+            width: 80%;
+            margin:  0 auto;
+        }
+        .box-body>div:hover .yin{
+            display:block
+        }
+        
+        /* 第三部分 的  关于我们  */
+        .box-base{
+            display: flex;
+            color: #666;
+            font-size:14px ;
+            margin-bottom: 40px;
+        }
+        .box-base > div{
+            flex: 1;
+            margin-left: 10px;
+        }
+        .box-base > div:first-child{
+            margin: 0 ;
+        }
+        .box-base img{
+            width: 100px;
+        }
+        .box-base .lf{
+            margin-top: 10px;
+            display: flex;
+        }
+        .box-base .lf>div{
+            flex:1.5;
+            margin: 0 50px 0 30px;
+            margin-top: 20px;
+        }
+        .box-base .lf>div span{
+            line-height: 25px;
+        }
+        .box-base .lf>div:first-child{
+            flex: 1;
+            margin:0
+        }
+        .box-base .lf>div>div>a img{
+            width: 60px;
+            padding: 20px 20px;
+        }
+        .box-base .lf>div img:hover{
+            opacity: 0.7;
+            cursor: pointer;
+        }
+        .box-base .lf>div:first-child img{
+            width: 100%;
+        }
+
+        /* 新闻资讯 ------------------------------*/
+        .lr {
+            display: flex;
+            flex-direction: column;
+        }
+        .lr>div{
+            flex: 1;
+            margin-top: 10px;
+            display: flex;
+        }
+        .lr>div>div{
+            flex: 1;
+        }
+        .lr>div> .lr-box2{
+            flex: 7;
+            padding-left: 20px;
+        }
+        .lr div:first-child{
+            margin: 0 0 0 5px;
+        }
+        .lr-box1{
+            text-align: center;
+            border: 1px solid #ccc;
+        }
+        .lr-box1 h1{
+            background: #ccc;
+            line-height: 60px;
+            color: #fff;
+            font-size: 40px;
+        }
+        .lr-box1:hover{
+            opacity: .7;        }
+        .lr-box1 h6{
+            background: #fff;
+            line-height: 25px;
+            color: #666;
+        }
+        .lr-box2 h2{
+            font-size: 16px;
+            line-height: 30px;
+        }
+        .lr-box2 p{
+            line-height: 20px;
+            font-size: 14px;
+        }
+
+    </style>
+    <link rel="stylesheet" href="./srcjs/swiper-bundle.css">
+    <link rel="stylesheet" href="./template/common/common.css">
+</head>
+<body>
+   
+        <!-- top   是头部的部分 -->
+        <div class="top">
+            <div class="top-left "> 
+                <img src="./imge/logo.jpg">
+            </div>
+
+            <div  class="top-nav ">
+                <a href="#">  <span>  首页      </span>     </a>
+                <a href="./template/demo1/index.html">  <span>  关于我们  </span>     </a>
+                <a href="./template/demo2/index.html">  <span>  产品展示  </span>     </a>
+                <a href="./template/demo3/index.html">  <span>  新闻中心  </span>     </a>
+                <a href="./template/demo4/index.html">  <span>  供求信息  </span>     </a>
+                <a href="./template/demo5/index.html">  <span>  销售网络  </span>     </a>
+                <a href="./template/demo6/index.html">  <span>  联系我们  </span>     </a>
+            </div>
+        </div>
+
+
+        <!-- 身体 -->
+         <div class="box">
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">  <img src="./imge/3.jpg" alt=""></div>
+                    <div class="swiper-slide">  <img src="./imge/4.jpg" alt=""></div>
+                    <div class="swiper-slide">  <img src="./imge/5.jpg" alt=""></div>
+                    <div class="swiper-slide">  <img src="./imge/6.jpg" alt=""></div>
+                    <div class="swiper-slide">  <img src="./imge/7.jpg" alt=""></div>
+                 
+                </div>
+                <!-- 如果需要分页器 -->
+                <div class="swiper-pagination"></div>
+                
+                <!-- 如果需要导航按钮 -->
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+                
+        
+            </div>
+        </div>
+
+
+        <div class="center">
+            <div class="title">   
+                <b>产品展示</b>
+                从事金刚石工具专用设备的研制与开发
+            </div>
+
+            <div class="box-body">
+                <div>
+                    <img src="./imge/8.jpg" alt="三相真空热压烧结机">
+
+                    <a href="#">
+                        <div class="yin">
+                                <div>
+                                    <img src="./imge/9.png">
+                                </div>
+                                <h1>  三相真空热压烧结机 </h1>
+                        </div>
+                    </a>
+                </div>
+
+                <div>
+                    <img src="./imge/13.jpg" alt="三相真空热压烧结机">
+
+                    <a href="#">
+                        <div class="yin">
+                                <div>
+                                    <img src="./imge/9.png">
+                                </div>
+                                <h1>  热压烧结炉  </h1>
+                        </div>
+                    </a>
+                </div>
+
+                <div>
+                    <img src="./imge/14.jpg" alt="三相真空热压烧结机">
+
+                    <a href="#">
+                        <div class="yin">
+                                <div>
+                                    <img src="./imge/9.png">
+                                </div>
+                                <h1>  全自动金刚石锯片激光焊接机  </h1>
+                        </div>
+                    </a>
+                </div>
+
+                <div>
+                    <img src="./imge/15.jpg" alt="三相真空热压烧结机">
+
+                    <a href="#">
+                        <div class="yin">
+                                <div>
+                                    <img src="./imge/9.png">
+                                </div>
+                                <h1>  锯片冷压机（全自动） </h1>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="center box-base">
+            <div>
+                <div class="title">   
+                    <b>关于我们</b>
+                    从事金刚石工具专用设备的研制与开发
+                </div>
+
+                <div class="lf">
+                    <div>
+                        <img src="./imge/9.jpg">
+                    </div>
+
+                    <div>
+                        <span>
+                            郑州金海威科技实业有限公司是郑州高新技术,
+                            产业开发区的高新技术企业。
+                            公司长期从事金刚石工具专用设备的研制与开发。 
+                            多年来，公司的产品畅销国内，
+                            并出口到韩国、巴西、欧洲、加拿大、中东 及印度等国家和地区...
+                        </span>
+                        
+                        <div>
+                            <a href="#">  <img src="./imge/10.jpg">  </a> 
+                            <a href="#">  <img src="./imge/11.jpg">  </a> 
+                            <a href="#">  <img src="./imge/12.jpg">  </a> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <div class="title">   
+                    <b>新闻资讯</b>
+                    为客户创造价值
+                </div>
+
+                <div class="lr">
+                    <div>
+                        <div class="lr-box1">
+                            <h1> <b>01</b>  </h1>
+                            <h6> 2022.03 </h6>
+                        </div>
+
+                        <div  class="lr-box2">
+                            <h2><a href="#"><b>金海威2021年度先进表彰 </b> </a></h2>
+                            <p>
+                                他们，是金海威2021年度先进员工代表，
+                                在他们背后有更多辛勤付出的金海威人。
+                                感谢员工们的热情工作与辛苦付出，
+                                感谢那些曾经为金海威打下基础的前辈们，同时...
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="lr">
+                        <div>
+                            <div class="lr-box1">
+                                <h1> <b>17</b>  </h1>
+                                <h6> 2021.12 </h6>
+                            </div>
+    
+                            <div  class="lr-box2">
+                                <h2><a href="#"><b>热压烧结机-电液比例溢流阀清洗  </b> </a></h2>
+                                <p>
+                                    SM型金刚石制品烧结压机由主机、液压系统、电器系统、
+                                    测温系统、冷却系统组成。
+                                    该设备用于金刚石锯片、金刚石磨轮及
+                                    其它金刚石制品节块的热压成型。
+                                </p>
+                            </div>
+                        </div>
+                        <div class="lr">
+                            <div>
+                                <div class="lr-box1">
+                                    <h1> <b>30</b>  </h1>
+                                    <h6> 2021.11 </h6>
+                                </div>
+        
+                                <div  class="lr-box2">
+                                    <h2><a href="#"><b>树立主责意识 持续安全发展  </b> </a></h2>
+                                    <p>
+                                        为保障安全生产工作平稳有序的持续开展，
+                                        强化落实好企业安全生产主体责任，
+                                        加大对生产安全各项工作的风险防控和监督管理力度，
+                                        防患于未然，确保安全生产形势...
+                                    </p>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="qc"></div>
+
+      <!-- 底部 -->
+      <div class="bottom ">
+        <div class="center bottom-box">
+             <div class="bottom-top">
+                 <div class="bottom-top-left">
+                     <ul>
+                         <li>
+                             <ol>
+                                 <li>
+                                     <a href="#">产品展示</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">粉末处理</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">冷压成型</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">热压烧结</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">刀头测量分选</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">焊接</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">后处理</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">附件</a>
+                                 </li>
+                             </ol>
+                         </li>
+ 
+                         <li>
+                             <ol>
+                                 <li>
+                                     <a href="#">产品展示</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">粉末处理</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">冷压成型</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">热压烧结</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">刀头测量分选</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">焊接</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">后处理</a>
+                                 </li>
+                             </ol>
+                         </li>
+ 
+                         <li>
+                             <ol>
+                                 <li>
+                                     <a href="#">新闻中心</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">公司新闻</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">行业动态</a>
+                                 </li>
+                             </ol>
+                         </li>
+ 
+                         <li>
+                             <ol>
+                                 <li>
+                                     <a href="#">销售网络</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">国内销售</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">国际销售</a>
+                                 </li>
+                                 <li>
+                                     <a href="#">服务流程</a>
+                                 </li>
+                             </ol>
+                         </li>
+                     </ul>
+                 </div>
+             
+                 <div class="bottom-top-right">
+                     <ol>
+                         <li>
+                             联系方式
+                         </li>
+                         <li>
+                             地址：郑州高新技术产业开发区冬青街71号
+                         </li>
+                         <li>
+                             电话：0371-67858801 67858803
+                         </li>
+                         <li>
+                             传真：0371-67858802
+                         </li>
+                         <li>
+                             <a href="#">E-mail:sales@goldenhw.com.cn</a>
+                         </li>
+                     </ol>
+                 </div>
+             </div>
+ 
+             <div class="bottom-bottom">
+                 Copyright ©2016 郑州金海威科技实业有限公司 All rights reserved.   豫ICP备05017007号
+                 <span>
+                     <a href="https://www.300.cn/">网站建设：中企动力郑州</a>  
+                 </span>
+             </div>
+        </div>
+     </div>
+
+    <script src="./srcjs/jquery.js"></script>
+    <script src="./srcjs/swiper-bundle.js"></script>
+
+    <script>
+       
+       var mySwiper = new Swiper ('.swiper', {
+        //   direction: 'vertical', // 垂直切换选项
+          loop: true, // 循环模式选项
+          autoplay:true,
+          
+          // 如果需要分页器
+          pagination: {
+            el: '.swiper-pagination',
+          },
+          
+          // 如果需要前进后退按钮
+          navigation: {
+            nextEl: '.swiper-button-next',
+            prevEl: '.swiper-button-prev',
+          },
+        })        
+
+
+    </script>
+</body>
+</html>
